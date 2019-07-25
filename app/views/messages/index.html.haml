@@ -7,7 +7,24 @@
     = link_to "", class: "side__header--icon" do
       = fa_icon 'cog'
   .side__groups
+    = render partial: 'messages/group'
+    -# .side__groups--groupname
+    -#   test-group
+    -# .side__groups--message
+    -#   こんにちわ
 .main
   .main__header
+    -# .main__header--groupname
+    -#   test-group
+    -# .main__header--member
+    -#   Member : test-user
+    -# .main__header--edit
+    -#   Edit
   .main__messages
+    -# .main__header--username
+    -#   test-user
+    -# .main__header--time
+    -#   2019/07/24(Wed)22:58:13
+    -# .main__header--message
+    -#   こんにちわ
   .main__form
