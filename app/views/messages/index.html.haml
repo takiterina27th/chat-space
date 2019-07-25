@@ -22,10 +22,12 @@
     .main__header--edit
       Edit
   .main__messages
-    -# .main__header--username
-    -#   test-user
-    -# .main__header--time
-    -#   2019/07/24(Wed)22:58:13
-    -# .main__header--message
+    = render partial: 'messages/message'
+    -# .main__messages__info
+    -#   .main__messages__info--username
+    -#     test-user
+    -#   .main__messages__info--time
+    -#     2019/07/24(Wed)22:58:13
+    -# .main__messages--message
     -#   こんにちわ
   .main__form
