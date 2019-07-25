@@ -1,6 +1,7 @@
 .side {
   width: 300px;
   height: 100%;
+  float: left;
   &__header {
     height: 100px;
     background-color: #253141;
@@ -32,6 +33,41 @@
       font-size: 11px;
       font-weight: bold;
       margin-bottom: 40px;
+    }
+  }
+}
+
+.main {
+  width: calc(100vw - 300px);
+  height: 100%;
+  float: right;
+  &__header {
+    height: 100px;
+    padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    position: relative;
+    &__left {
+      &--groupname {
+        font-size: 20px;
+        color: #333333;
+        margin-top: 35px;
+      }
+      &--member {
+        font-size: 12px;
+        color: #999999;
+        margin-top: 15px;
+      }
+    }  
+    &--edit {
+      height: 40px;
+      line-height: 40px;
+      color: $mainLightblueColor;
+      border: solid 1px $mainLightblueColor;
+      padding: 0 20px;
+      margin-top: 28px;
+      position: absolute;
+      right: 40px;
     }
   }
 }
