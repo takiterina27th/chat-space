@@ -22,18 +22,21 @@
   &__groups {
     height: 100vh;
     background-color: #2f3e51;
-    color: $mainWhiteColor;
     padding: 20px;
-    &--groupname {
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    &--message {
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 40px;
-    }
+    &__group {
+      color: $mainWhiteColor;
+      text-decoration: none;
+      &--groupname {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &--message {
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+    }  
   }
 }
 
