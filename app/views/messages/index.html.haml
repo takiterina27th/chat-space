@@ -1,0 +1,35 @@
+.flash
+  グループを作成しました
+
+.side
+  .side__header
+    .side__header--username
+      test-user
+    = link_to "", class: "side__header--icon" do
+      = fa_icon 'edit'
+    = link_to "", class: "side__header--icon" do
+      = fa_icon 'cog'
+  .side__groups
+    = render partial: 'messages/group'
+
+.main
+  .main__header
+    .main__header__left
+      .main__header__left--groupname
+        test-group
+      .main__header__left--member
+        Member : test-user
+    = link_to "", class: "main__header--edit" do
+      Edit
+  .main__messages
+    = render partial: 'messages/message'
+  .main__form
+    %form{class: "main__form__new-message"}
+      .main__form__new-message__input-box
+        %input{placeholder: "type a message", calss: "main__form__new-message__input-box--text"}
+        %label{for: "upload-icon", calss: "main__form__new-message__input-box--image"}
+          %i{class: "fa fa-image"}
+          %input{type: "file", id: "upload-icon"}
+      %input{:type => "submit", :value => "Send", class: "main__form__new-message--submit-btn"}  
+
+
