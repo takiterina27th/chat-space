@@ -11,10 +11,6 @@
       = fa_icon 'cog'
   .side__groups
     = render partial: 'messages/group'
-    -# .side__groups--groupname
-    -#   test-group
-    -# .side__groups--message
-    -#   こんにちわ
 
 .main
   .main__header
@@ -27,13 +23,6 @@
       Edit
   .main__messages
     = render partial: 'messages/message'
-    -# .main__messages__info
-    -#   .main__messages__info--username
-    -#     test-user
-    -#   .main__messages__info--time
-    -#     2019/07/24(Wed)22:58:13
-    -# .main__messages--message
-    -#   こんにちわ
   .main__form
     %form{class: "main__form__new-message"}
       .main__form__new-message__input-box
