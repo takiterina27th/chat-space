@@ -20,13 +20,24 @@
       Edit
   .main__messages
     = render partial: 'messages/message'
+
   .main__form
-    %form{class: "main__form__new-message"}
-      .main__form__new-message__input-box
-        %input{placeholder: "type a message", calss: "main__form__new-message__input-box--text"}
-        %label{for: "upload-icon", calss: "main__form__new-message__input-box--image"}
-          %i{class: "fa fa-image"}
-          %input{type: "file", id: "upload-icon"}
-      %input{:type => "submit", :value => "Send", class: "main__form__new-message--submit-btn"}  
+    = form_for [@group, @message] do |f|
+      .main__form__new-message
+        .main__form__new-message__input-box
+          = f.text_field :content, class: 'main__form__new-message__input-box--text', placeholder: 'type a message'
+          = f.label :image, class: 'main__form__new-message__input-box--image', for: "upload-icon" do
+            = fa_icon 'picture-o', class: 'fa fa-image'
+            = f.file_field :image, class: 'hidden', id: "upload-icon"
+        = f.submit 'Send', class: 'main__form__new-message--submit-btn'
+
+  -# .main__form
+  -#   %form{class: "main__form__new-message"}
+  -#     .main__form__new-message__input-box
+  -#       %input{placeholder: "type a message", calss: "main__form__new-message__input-box--text"}
+  -#       %label{for: "upload-icon", calss: "main__form__new-message__input-box--image"}
+  -#         %i{class: "fa fa-image"}
+  -#         %input{type: "file", id: "upload-icon"}
+  -#     %input{:type => "submit", :value => "Send", class: "main__form__new-message--submit-btn"}  
 
 
