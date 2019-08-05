@@ -1,7 +1,10 @@
 .main__messages__info
   .main__messages__info--username
-    test-user
+    = message.user.name
   .main__messages__info--time
-    2019/07/24(Wed)22:58:13
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
 .main__messages--message
-  こんにちわ
+  - if message.content.present?
+    %p.lower-message__content
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
