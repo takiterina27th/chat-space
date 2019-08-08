@@ -1,45 +1,46 @@
-.side
-  .side__header
-    .side__header--username
-      = current_user.name
-    = link_to new_group_path, class: "side__header--icon" do
-      = fa_icon 'edit'
-    = link_to edit_user_path(current_user), class: "side__header--icon" do
-      = fa_icon 'cog'
-  .side__groups
-    = render partial: 'messages/group'
+.chat
+  .side
+    .side__header
+      .side__header--username
+        = current_user.name
+      = link_to new_group_path, class: "side__header--icon" do
+        = fa_icon 'edit'
+      = link_to edit_user_path(current_user), class: "side__header--icon" do
+        = fa_icon 'cog'
+    .side__groups
+      = render partial: 'messages/group'
 
-.main
-  .main__header
-    .main__header__left
-      .main__header__left--groupname
-        = @group.name
-      .main__header__left--member
-        Member :
-        - @group.users.each do |user|
-          = user.name
-    = link_to edit_group_path(current_user), class: "main__header--edit" do
-      Edit
-  .main__messages
-    = render partial: 'messages/message', collection: @messages
+  .main
+    .main__header
+      .main__header__left
+        .main__header__left--groupname
+          = @group.name
+        .main__header__left--member
+          Member :
+          - @group.users.each do |user|
+            = user.name
+      = link_to edit_group_path(current_user), class: "main__header--edit" do
+        Edit
+    .main__messages
+      = render partial: 'messages/message', collection: @messages
 
-  .main__form
-    = form_for [@group, @message] do |f|
-      .main__form__new-message
-        .main__form__new-message__input-box
-          = f.text_field :content, class: 'main__form__new-message__input-box--text', placeholder: 'type a message'
-          = f.label :image, class: 'main__form__new-message__input-box--image', for: "upload-icon" do
-            = fa_icon 'picture-o', class: 'fa fa-image'
-            = f.file_field :image, class: 'hidden', id: "upload-icon"
-        = f.submit 'Send', class: 'main__form__new-message--submit-btn'
+    .main__form
+      = form_for [@group, @message] do |f|
+        .main__form__new-message
+          .main__form__new-message__input-box
+            = f.text_field :content, class: 'main__form__new-message__input-box--text', placeholder: 'type a message'
+            = f.label :image, class: 'main__form__new-message__input-box--image', for: "upload-icon" do
+              = fa_icon 'picture-o', class: 'fa fa-image'
+              = f.file_field :image, class: 'hidden', id: "upload-icon"
+          = f.submit 'Send', class: 'main__form__new-message--submit-btn'
 
-  -# .main__form
-  -#   %form{class: "main__form__new-message"}
-  -#     .main__form__new-message__input-box
-  -#       %input{placeholder: "type a message", calss: "main__form__new-message__input-box--text"}
-  -#       %label{for: "upload-icon", calss: "main__form__new-message__input-box--image"}
-  -#         %i{class: "fa fa-image"}
-  -#         %input{type: "file", id: "upload-icon"}
-  -#     %input{:type => "submit", :value => "Send", class: "main__form__new-message--submit-btn"}  
+    -# .main__form
+    -#   %form{class: "main__form__new-message"}
+    -#     .main__form__new-message__input-box
+    -#       %input{placeholder: "type a message", calss: "main__form__new-message__input-box--text"}
+    -#       %label{for: "upload-icon", calss: "main__form__new-message__input-box--image"}
+    -#         %i{class: "fa fa-image"}
+    -#         %input{type: "file", id: "upload-icon"}
+    -#     %input{:type => "submit", :value => "Send", class: "main__form__new-message--submit-btn"}  
 
 
