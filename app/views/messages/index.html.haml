@@ -13,9 +13,11 @@
   .main__header
     .main__header__left
       .main__header__left--groupname
-        test-group
+        = @group.name
       .main__header__left--member
-        Member : test-user
+        Member :
+        - @group.users.each do |user|
+          = user.name
     = link_to edit_group_path(current_user), class: "main__header--edit" do
       Edit
   .main__messages
