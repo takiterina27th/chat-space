@@ -51,7 +51,6 @@ $(function(){
         contentType: false
       })
       .done(function(data){
-        console.log(data)
         var html = buildHTML(data);
         $('.main__messages').append(html);
         $('.main__form__new-message__input-box--text').val('');
