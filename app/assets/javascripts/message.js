@@ -53,6 +53,7 @@ $(function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.main__messages').append(html);
+        $('.main__form__new-message__input-box--text').val('');
         $('.main__messages').animate({scrollTop: $('.main__messages')[0].scrollHeight}, 'fast');
       })
   });
