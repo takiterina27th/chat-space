@@ -11,4 +11,46 @@ $(function(){
       processData: false,
       contentType: false
   })
+  function buildHTML(message){
+      if (message.image) {
+        var html = `<div class="main__messages__message">
+                      <div class="main__messages__message__info">
+                        <div class="main__messages__message__info--username">
+                          ${message.name}
+                        </div>
+                        <div class="main__messages__message__info--time">
+                          ${message.date}
+                        </div>
+                      </div>
+                      <div class="main__messages__message--message">
+                        <p class="lower-message__content">
+                          ${message.content}
+                        </p>
+                          <image src="${message.image}"/>
+                      </div>
+                    </div>`
+        return html;            
+      } else {
+        var html = `<div class="main__messages__message">
+                      <div class="main__messages__message__info">
+                        <div class="main__messages__message__info--username">
+                          ${message.name}
+                        </div>
+                        <div class="main__messages__message__info--time">
+                          ${message.date}
+                        </div>
+                      </div>
+                      <div class="main__messages__message--message">
+                        <p class="lower-message__content">
+                          ${message.content}
+                        </p>
+                      </div>
+                    </div>`
+        return html;
+      };  
+    }
+
+      .done(function(data){
+        var html = buildHTML(data);
+  });
 })
