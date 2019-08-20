@@ -1,6 +1,9 @@
 $(function(){
   function buildHTML(message){
-      if (message.image) {
+        var insertImage = '';
+        if (message.image) {
+            insertImage = `<img src="${message.image}">`;
+        }
         var html = `<div class="main__messages__message">
                       <div class="main__messages__message__info">
                         <div class="main__messages__message__info--username">
@@ -14,28 +17,10 @@ $(function(){
                         <p class="lower-message__content">
                           ${message.content}
                         </p>
-                          <image src="${message.image}"/>
-                      </div>
-                    </div>`
-        return html;            
-      } else {
-        var html = `<div class="main__messages__message">
-                      <div class="main__messages__message__info">
-                        <div class="main__messages__message__info--username">
-                          ${message.name}
-                        </div>
-                        <div class="main__messages__message__info--time">
-                          ${message.date}
-                        </div>
-                      </div>
-                      <div class="main__messages__message--message">
-                        <p class="lower-message__content">
-                          ${message.content}
-                        </p>
+                          ${insertImage}
                       </div>
                     </div>`
         return html;
-      };  
     }
 
     $('.new_message').on('submit', function(e){
