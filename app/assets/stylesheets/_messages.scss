@@ -89,25 +89,27 @@
       height: calc(100vh - 190px);
       padding: 46px 40px;
       background-color: #fafafa;
-      &__info {
-        padding-bottom: 10px;
-        display: flex;
-        &--username {
-          font-size: 16px;
-          font-weight: bold;
+      &__message {
+        &__info {
+          padding-bottom: 10px;
+          display: flex;
+          &--username {
+            font-size: 16px;
+            font-weight: bold;
+            color: $mainDarkblueColor;
+          }
+          &--time {
+            color: $mainGrayColor;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        }
+        &--message {
           color: $mainDarkblueColor;
+          font-size: 14px;
+          padding-bottom: 40px;
         }
-        &--time {
-          color: $mainGrayColor;
-          font-size: 12px;
-          margin-left: 10px;
-        }
-      }
-      &--message {
-        color: $mainDarkblueColor;
-        font-size: 14px;
-        padding-bottom: 40px;
-      }
+      }  
     }
     &__form {
       height: 90px;
