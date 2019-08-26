@@ -11,13 +11,6 @@ $(function() {
     user_list.append(html);
   }
 
-  // function appendNoUserToSearchList(user) {
-  //   var html = 
-  //     `<div class="chat-group-user clearfix">
-  //       <p class="chat-group-user__name">${ user.name }</p>
-  //     </div>`
-  //   search_list.append(html);
-  // }
   function appendUserToMemberList(name, user_id) {
     var html = 
       `<div class='chat-group-user'>
@@ -43,9 +36,6 @@ $(function() {
           appendUser(user);
         });
       }
-      // else {
-      //   appendNoUserToSearchList("一致するユーザーはいません");
-      // }
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
