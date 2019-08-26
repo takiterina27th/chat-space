@@ -10,7 +10,7 @@
           Member :
           - @group.users.each do |user|
             = user.name
-      = link_to edit_group_path(current_user), class: "main__header--edit" do
+      = link_to edit_group_path(@group), class: "main__header--edit" do
         Edit
     .main__messages
       = render partial: 'messages/message', collection: @messages
