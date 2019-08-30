@@ -30,9 +30,12 @@ $(function(){
         url: url,
         type: "POST",
         data: formData,
+        url: 'api/messages',
+        type: 'GET',
         dataType: 'json',
         processData: false,
         contentType: false
+        data: {id: last_message_id}
       })
       .done(function(data){
         var html = buildHTML(data);
