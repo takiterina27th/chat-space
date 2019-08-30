@@ -53,6 +53,9 @@ $(function(){
         dataType: 'json',
         data: {id: last_message_id}
       })
+        var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildHTML(message);
           $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight}, 'fast');
       })
       .fail(function() {
