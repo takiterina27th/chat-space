@@ -56,6 +56,7 @@ $(function(){
         var insertHTML = '';
         messages.forEach(function(message){
           insertHTML = buildHTML(message);
+          $('.main__messages').append(insertHTML);
           $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight}, 'fast');
       })
       .fail(function() {
