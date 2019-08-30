@@ -19,6 +19,8 @@ $(function(){
                     </div>`
         return html;
     }
+  var reloadMessages = function() {
+      last_message_id = $('.main__messages__message:last').data('id')
 
     $('.new_message').on('submit', function(e){
       e.preventDefault();
@@ -43,4 +45,5 @@ $(function(){
         alert('error');
       })
   });
+  };
 })
