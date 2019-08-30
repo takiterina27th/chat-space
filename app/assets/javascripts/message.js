@@ -56,4 +56,5 @@ $(function(){
           $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight}, 'fast');
       })
   };
+  setInterval(reloadMessages, 5000);
 })
