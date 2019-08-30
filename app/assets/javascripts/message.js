@@ -1,24 +1,25 @@
 $(function(){
   function buildHTML(message){
-        var insertImage = message.image ? `<img src="${message.image}">` : '';
-        var html = `<div class="main__messages__message">
-                      <div class="main__messages__message__info">
-                        <div class="main__messages__message__info--username">
-                          ${message.name}
-                        </div>
-                        <div class="main__messages__message__info--time">
-                          ${message.date}
-                        </div>
-                      </div>
-                      <div class="main__messages__message--message">
-                        <p class="lower-message__content">
-                          ${message.content}
-                        </p>
-                          ${insertImage}
-                      </div>
-                    </div>`
-        return html;
-    }
+    var insertImage = message.image.url ? `<img src="${message.image.url}">` : '';
+    var html = `<div class="main__messages__message" data-id="${message.id}">
+                  <div class="main__messages__message__info">
+                    <div class="main__messages__message__info--username">
+                      ${message.user_name}
+                    </div>
+                    <div class="main__messages__message__info--time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="main__messages__message--message">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                      ${insertImage}
+                  </div>
+                </div>`
+    return html;
+  }
+
   var reloadMessages = function() {
       last_message_id = $('.main__messages__message:last').data('id')
 
