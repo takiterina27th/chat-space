@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'takiterina-bucket'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/ここにバケット名を入れます'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takiterina-bucket'
 end
