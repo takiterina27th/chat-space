@@ -40,8 +40,9 @@ $(function(){
       $('.main__messages').animate({scrollTop: $('.main__messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力してください。');
     })
+    $(".main__form__new-message--submit-btn").removeAttr('data-disable-with')
   });
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
