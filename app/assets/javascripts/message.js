@@ -24,6 +24,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
+    $(".main__form__new-message--submit-btn").removeAttr('data-disable-with')
     $.ajax({
       url: url,
       type: "POST",
@@ -42,7 +43,7 @@ $(function(){
     .fail(function(){
       alert('メッセージを入力してください。');
     })
-    $(".main__form__new-message--submit-btn").removeAttr('data-disable-with')
+    
   });
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
