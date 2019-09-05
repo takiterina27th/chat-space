@@ -23,4 +23,4 @@
             = f.label :image, class: 'main__form__new-message__input-box--image', for: "upload-icon" do
               = fa_icon 'picture-o', class: 'fa fa-image'
               = f.file_field :image, class: 'hidden', id: "upload-icon"
-          = f.submit 'Send', data: {disable_with: "送信..."}, class: 'main__form__new-message--submit-btn'
+          = f.submit 'Send', class: 'main__form__new-message--submit-btn'
